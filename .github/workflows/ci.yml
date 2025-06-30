@@ -2,9 +2,9 @@ name: KIIS CI Pipeline
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]  # Changed from main to master
   pull_request:
-    branches: [ main ]
+    branches: [ master ]  # Changed from main to master
 
 jobs:
   test:
@@ -33,7 +33,7 @@ jobs:
   build-and-push:
     needs: test
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/master'  # Changed from main to master
     
     steps:
     - name: Checkout code
